@@ -1,7 +1,7 @@
 import type { PageServerLoad } from "./$types";
 
 
-export const load = (async ({ params }) => {
+export const load = (async ( ) => {
     return {
         feedTitle: "Hello, World"
     };
