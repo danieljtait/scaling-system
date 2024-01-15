@@ -1,0 +1,10 @@
+<table>
+    <tr>
+        <th>Name</th>
+        <th>Country</th>
+    </tr>
+    <tr>
+        <td>Apple</td>
+        <td>US</td> 
+    </tr>
+</table>
