@@ -11,3 +11,8 @@ model Entity {
   entity_id Int    @id @default(autoincrement())
   name      String @db.VarChar(255)
 }
+
+model InfoProvider {
+  id      Int @id @default(autoincrement())
+  kind    String @db.VarChar(50)
+}
