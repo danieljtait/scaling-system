@@ -6,6 +6,9 @@ const prisma = new PrismaClient()
 async function main() {
   console.log(`Start seeding ...`)
 
+  prisma.$executeRaw`DELETE FROM ChatSession;`;
+  prisma.$executeRaw`DELETE FROM Entity;`;
+
   for (const p of entityData) {
     const entity = await prisma.entity.create({
       data: {
@@ -14,6 +17,14 @@ async function main() {
     })
     console.log(`Created entity: ${entity.name}`)
   }
+  
+  const chatSession = await prisma.chatSession.create({
+    data: {
+      id: 1
+    }
+  })
+  console.log(`Created chatSession: ${chatSession.id}`)
+  
   console.log(`Seeding finished.`)
 }
 
