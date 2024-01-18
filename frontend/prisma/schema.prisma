@@ -26,4 +26,6 @@ model ChatMessage {
   id             Int @id @default(autoincrement())
   chatSession    ChatSession @relation(fields: [chatSessionId], references: [id], onDelete: Cascade)
   chatSessionId  Int
+  sender         String
+  role           String
 }
