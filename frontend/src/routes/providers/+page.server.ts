@@ -7,6 +7,7 @@ import type { Actions } from './$types';
 export const actions = {
 	default: async (event) => {
 		// TODO log the user in
+        console.log(event);
         throw redirect(303, '/providers/provider/0')
 	},
 } satisfies Actions;
