@@ -7,25 +7,25 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model Entity {
+model entity {
   entity_id Int    @id @default(autoincrement())
   name      String @db.VarChar(255)
 }
 
-model InfoProvider {
+model infoprovider {
   id      Int @id @default(autoincrement())
   kind    String @db.VarChar(50)
 }
 
-model ChatSession {
+model chatsession {
   id         Int @id @default(autoincrement())
-  messages   ChatMessage[]
+  messages   chatmessage[]
 }
 
-model ChatMessage {
+model chatmessage {
   id             Int @id @default(autoincrement())
-  chatSession    ChatSession @relation(fields: [chatSessionId], references: [id], onDelete: Cascade)
-  chatSessionId  Int
+  chatsession    chatsession @relation(fields: [chatsessionid], references: [id], onDelete: Cascade)
+  chatsessionid  Int
   sender         String
   role           String
   text           String
