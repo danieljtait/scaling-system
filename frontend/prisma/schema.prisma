@@ -28,4 +28,5 @@ model ChatMessage {
   chatSessionId  Int
   sender         String
   role           String
+  text           String
 }
