@@ -16,3 +16,14 @@ model InfoProvider {
   id      Int @id @default(autoincrement())
   kind    String @db.VarChar(50)
 }
+
+model ChatSession {
+  id         Int @id @default(autoincrement())
+  messages   ChatMessage[]
+}
+
+model ChatMessage {
+  id             Int @id @default(autoincrement())
+  chatSession    ChatSession @relation(fields: [chatSessionId], references: [id], onDelete: Cascade)
+  chatSessionId  Int
+}
