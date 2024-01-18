@@ -14,7 +14,7 @@ export const actions = {
 
 export const load = (async ( ) => {
     const pageSize: number = 25
-    const response = await prisma.infoProvider.findMany({
+    const response = await prisma.infoprovider.findMany({
         take: pageSize
     })
     return {
